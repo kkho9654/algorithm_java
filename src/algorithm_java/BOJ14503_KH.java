@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+public class BOJ14503_KH {
 	static int[] rMask = {-1,0,1,0};
 	static int[] cMask = {0,1,0,-1};
 	static int[][] room;

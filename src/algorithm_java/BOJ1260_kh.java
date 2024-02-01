@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_1260_kh {
+public class BOJ1260_kh {
 	static StringBuilder sb = new StringBuilder();
 	static boolean[] check;
 	static int[][] arr;
