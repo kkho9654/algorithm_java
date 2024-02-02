@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+// 메모리:29632KB	시간:420ms
 public class BOJ12891_DNA비밀번호 {
 	static int S,P;
 	public static void main(String[] args) throws IOException {
@@ -34,18 +35,21 @@ public class BOJ12891_DNA비밀번호 {
 				acgt[arr[start++]]--;
 			}
 			acgt[arr[i]]++;
-//			System.out.println(Arrays.toString(acgt));
-			boolean flag = true;
-			for(int j=0;j<4;j++) {
-				if(acgt[j] - answer[j] < 0) {
-					flag =false;
-					break;
-				}
-			}
-			if(i>=P-1 && flag) cnt++;
+			
+			// acgt배열과 answer배열을 확인해서 카운트 올리기
+			if(i>=P-1 && check(acgt,answer)) cnt++;
 		}
 		
 		System.out.println(cnt);
 		
+	}
+	
+	private static boolean check(int[] acgt, int[] answer) {
+		for(int j=0;j<4;j++) {
+			if(acgt[j] - answer[j] < 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 }

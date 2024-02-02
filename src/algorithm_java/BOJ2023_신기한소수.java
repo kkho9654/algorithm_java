@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+// 11572KB , 488ms
 public class BOJ2023_신기한소수 {
 	static int N;
 	public static void main(String[] args) throws IOException {
@@ -23,6 +24,7 @@ public class BOJ2023_신기한소수 {
 		}
 		
 		// 소수는 1과 자기 자신만 나누어 떨어지는 친구
+		// 기존 수x10 + (0~9) 추가해서도 소수이면 다음 depth(다음 자리수)누적해서 호출
 		for(int i=0;i<10;i++) {
 			int cur = 10*before + i;
 			if(isPrimeNum(cur)) bt(depth+1, cur);
